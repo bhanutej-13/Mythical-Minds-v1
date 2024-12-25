@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn.glitch.global/90d5b6d6-58eb-4709-a7ad-7aaa4d169a3e/640px-Om_symbol.svg.webp?v=1704372214838" type="image/x-icon"/>
+    <title>MythicalMinds</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-section {
+            flex: 65%;
+            background-image: url('img.jpg'); /* Replace with a kid-friendly background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-section {
+            flex: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.85); /* Slight opacity to see background through */
+            backdrop-filter: blur(5px);
+        }
+
+        .form-box {
+            width: 80%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .logo img {
+            width: 120px;
+            margin-bottom: 20px;
+            border-radius: 40%;
+            border: 2px solid #ff6b6b;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .btn-action {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #ff4c4c;
+        }
+
+        .toggle-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .toggle-link a {
+            text-decoration: none;
+            color: #ff6b6b;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .forgot-password a {
+            text-decoration: none;
+            color: #ff6b6b;
+            font-size: 0.9em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: -70px;
+            left: 5px;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background-color: #ff4c4c;
+        }
+
+        .back-to-home svg {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+        <div class="form-section">
+            <div class="form-box">
+                <a href="home.html"  class="back-to-home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Home
+                </a>
+                <br>
+                <div class="logo">
+                    <img src="om.jpg" alt="MythicalMinds Logo: An Om symbol">
+                </div>
+
+                <!-- Sign In Form -->
+                <form id="signInForm" action="#" method="post">
+                    <h2>Sign in to play!</h2>
+                    <div class="input-group">
+                        <input type="email" placeholder="Parent's email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Your secret password" required>
+                    </div>
+                    <div class="forgot-password">
+                        <a onclick="toggleForms('forgotPasswordForm')">Forgot your password?</a>
+                    </div>
+                    <button type="submit" class="btn-action">Sign In</button>
+                    <p class="toggle-link">New here? <a onclick="toggleForms('signUpForm')">Sign Up</a></p>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form id="signUpForm" action="#" method="post" class="hidden">
+                    <h2>Join MythicalMinds!</h2>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your full name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Pick a cool username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Parent's email address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Create a password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn-action">Sign Up</button>
+                    <p class="toggle-link">Already have an account? <a onclick="toggleForms('signInForm')">Sign In</a></p>
+                </form>
+
+                <!-- Forgot Password Form -->
+                <form id="forgotPasswordForm" action="#" method="post" class="hidden">
+                    <h2>Oops! Forgot your password?</h2>
+                    <div class="input-group">
+                        <input type="email" placeholder="Parent's email" required>
+                    </div>
+                    <button type="submit" class="btn-action">Send Reset Link</button>
+                    <p class="toggle-link">Remember your password? <a onclick="toggleForms('signInForm')">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForms(formToShow) {
+            var forms = ['signInForm', 'signUpForm', 'forgotPasswordForm'];
+            forms.forEach(function(form) {
+                document.getElementById(form).classList.add('hidden');
+            });
+            document.getElementById(formToShow).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

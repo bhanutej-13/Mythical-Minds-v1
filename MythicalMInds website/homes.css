@@ -1,0 +1,236 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .nav-left {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 35px;
+    height:35px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+header h1 {
+    margin-left: 10px;
+}
+
+header .search-box {
+    flex: 1;
+    margin: 0 20px;
+    width: 90px;
+}
+
+header .search-box form {
+    display: flex;
+    margin-left: 200px;
+}
+
+header .search-box input {
+    width: 50%;
+    padding: 8px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+
+header .search-box button {
+    padding: 8px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+header .login a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    
+}
+a:hover {
+    text-decoration: underline;
+    box-shadow:#fff;
+}
+
+header .login a i {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.lbtn {
+    font-size: 18px;
+    padding: 3px 6px;
+    margin-right: 5px;
+    border-radius: 18px;
+    border: none;
+    background-color: #555;
+    box-sizing: border-box;
+}
+.lbtn:hover{
+    background-color:orange;
+}
+/* Sidebar Styling */
+#sidebar {
+    background-color: #002B36;
+    color: #fff;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    padding-top: 20px;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+}
+
+#sidebar.active {
+    transform: translateX(0);
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px 20px;
+    position: relative;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background-color: #073642;
+}
+
+#sidebar ul li ul.subnav {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #073642;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+}
+
+#sidebar ul li:hover ul.subnav {
+    display: block;
+    border-radius: 10px;
+    margin-left: -50px;
+}
+
+#sidebar ul li ul.subnav li {
+    padding: 10px;
+}
+
+#menu-toggle {
+    background-color: black;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;   
+}
+#menu-toggle:active{
+    rotate: 180deg;
+    transition: rotate 0.7s ease;
+}
+/* Main Content Styling */
+main {
+    margin-top: 60px;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card video {
+    width: 100%;
+    height: auto;
+}
+
+.video-card h3 {
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.video-card p {
+    padding: 0 10px 10px;
+    color: #666;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.video-card {
+    width: 100%; /* or a specific width, e.g., 80%, 600px */
+    max-width: 600px; /* Optional: set a max-width for larger screens */
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: for a card effect */
+    border-radius: 8px; /* Optional: rounded corners */
+    overflow: hidden; /* Ensures the content stays within the card */
+}
+
+.video-card iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Maintains the 16:9 aspect ratio */
+    display: block; /* Ensures no inline space below the iframe */
+    border: none; /* Removes the border around the iframe */
+}
+
+.video-card h3, .video-card p {
+    margin: 10px;
+    text-align: center;
+}

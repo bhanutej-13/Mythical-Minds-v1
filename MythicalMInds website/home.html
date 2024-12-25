@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MythicalMinds</title>
+    <link rel="stylesheet" href="homes.css">
+    <link rel="shortcut icon" href="https://cdn.glitch.global/90d5b6d6-58eb-4709-a7ad-7aaa4d169a3e/640px-Om_symbol.svg.webp?v=1704372214838" type="image/x-icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <button id="menu-toggle">&#9776;</button>
+            <img src="om.jpg" alt="Mythical Minds Logo" class="logo">
+            <h1>MythicalMinds</h1>
+        </div>
+        <div class="search-box">
+            <form>
+                <input type="text" name="search" id="search" placeholder="Search here">
+                <button type="submit" aria-label="search" class="btn" ><i class="ri-search-line"></i></button>
+            </form>            
+        </div>
+        <div class="login">
+            <a href="sign in.html"><button class="lbtn"><i class="ri-account-circle-line"></i> Sign in</button></a>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#"><i class="ri-home-2-line"></i> Home</a></li>
+            <li><a href="about_us.html"><i class="ri-information-line"></i> About Us</a></li>
+            <li>
+                <a href="#"><i class="ri-layout-2-line"></i> Categories</a>
+                <ul class="subnav">
+                    <li><a href="https://mythicalminds-music.glitch.me/">Music</a></li>
+                    <li><a href="#">Mythology</a></li>
+                    <li><a href="#">Human Values</a></li>
+                    <li><a href="#">Ethical Values</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="ri-upload-line"></i> Upload</a></li>
+            <li><a href="#"><i class="ri-time-line"></i> History</a></li>
+            <li><a href="#"><i class="ri-folder-line"></i> Library</a></li>
+            <li><a href="#"><i class="ri-play-list-add-line"></i> Playlist</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="video-gallery">
+            <!-- Video cards -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/yF7ANU-sguE?si=km_n1a7K92nE9EYy" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <h3>Legend Of Hanuman</h3>
+            </div>        
+            <div class="video-card">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XwDNkpVM0zA?si=NLteLd5tRrRxAli5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>Hanuman animated video</h3>
+            </div>
+            
+            <div class="video-card">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8JhdiDiZMNE?si=5AOC91lAzxhOeP_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>Hanuman</h3>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 4</h3>
+                <p>Uploader Name 4</p>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 5</h3>
+                <p>Uploader Name 5</p>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 6</h3>
+                <p>Uploader Name 6</p>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video7.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 7</h3>
+                <p>Uploader Name 7</p>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video8.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 8</h3>
+                <p>Uploader Name 8</p>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video9.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 9</h3>
+                <p>Uploader Name 9</p>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video10.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 10</h3>
+                <p>Uploader Name 10</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mythical Minds</p>
+        <p id="time"></p>
+    </footer>
+    
+    <script src="hom.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythical Minds</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo {
+            width:35px;
+            height:35px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-left: 10px;
+        }
+        header .login a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            box-shadow: #fff;
+        }
+
+        header .login a i {
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+
+        .lbtn {
+            font-size: 18px;
+            padding: 3px 6px;
+            margin-right: 5px;
+            border-radius: 18px;
+            border: none;
+            background-color: #555;
+            box-sizing: border-box;
+        }
+
+        .lbtn:hover {
+            background-color: orange;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            background-color: #002B36;
+            color: #fff;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            padding-top: 20px;
+            transform: translateX(-250px);
+            transition: transform 0.3s ease;
+        }
+
+        #sidebar.active {
+            transform: translateX(0);
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        #sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            background-color: #073642;
+        }
+
+        #sidebar ul li ul.subnav {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #073642;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 200px;
+        }
+
+        #sidebar ul li:hover ul.subnav {
+            display: block;
+        }
+
+        #sidebar ul li ul.subnav li {
+            padding: 10px;
+        }
+
+        #menu-toggle {
+            background-color: black;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        #menu-toggle:active {
+            border-color: #222;
+            rotate: 180deg;
+            transition: rotate 0.7s ease;
+        }
+
+        /* Main Content Styling */
+        main {
+            margin-top: 10px;
+            margin-left: 200px;
+            margin-right: 100px;
+            padding: 0px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            padding-top: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Instructors Section Styling */
+        .instructors-section {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, #f0f0f0, #ffffff);
+        }
+
+        .instructors-section h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .instructors-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .instructor {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .instructor:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            box-shadow:#333;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .instructor img {
+            width: 100%;
+            transition: border-radius 0.3s ease, transform 0.3s ease;
+        }
+
+        .instructor:hover img {
+            border-radius: 50%;
+            transform: scale(1.1);
+        }
+
+        .instructor h2 {
+            font-size: 24px;
+            margin: 20px 0 10px;
+            color: #444;
+        }
+
+        .instructor p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .instructor:hover h2,
+        .instructor:hover p {
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <button id="menu-toggle">&#9776;</button>
+            <img src="om.jpg" alt="Mythical Minds Logo" class="logo">
+            <h1>MythicalMinds</h1>
+        </div>
+        <div class="login">
+            <button class="lbtn" type="button"><a href="#"><i class="ri-account-circle-line"></i> Sign in</a></button>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li><a href="home.html"><i class="ri-home-2-line"></i> Home</a></li>
+            <li><a href="Team Members.html"><i class="ri-information-line"></i> About Us</a></li>
+            <li>
+                <a href="#"><i class="ri-layout-2-line"></i> Categories</a>
+                <ul class="subnav">
+                    <li><a href="/mythology">Mythology</a></li>
+                    <li><a href="/human-values">Human Values</a></li>
+                    <li><a href="/ethical-values">Ethical Values</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="ri-upload-line"></i> Upload</a></li>
+            <li><a href="#"><i class="ri-time-line"></i> History</a></li>
+            <li><a href="#"><i class="ri-folder-line"></i> Library</a></li>
+            <li><a href="#"><i class="ri-play-list-add-line"></i> Playlist</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="team-section" class="instructors-section">
+            <h1><b>Meet Our Team</b></h1>
+            <div class="instructors-container">
+                <div class="instructor">
+                    <div class="image-container">
+                        <img src="ashish1.jpg" alt="T.Ashish" data-toggle="modal" data-target="#modalAshish">
+                    </div>
+                    <h2>T.Ashish</h2>
+                    <p>Co-Founder</p>
+                </div>
+                <div class="instructor">
+                    <div class="image-container">
+                        <img src="4.jpg" alt="P.Bhanu Tej" data-toggle="modal" data-target="#modalBhanuTej">
+                    </div>
+                    <h2>P.Bhanu Tej</h2>
+                    <p>Founder</p>
+                </div>
+                <div class="instructor">
+                    <div class="image-container">
+                        <img src="balaji.jpg" alt="B.Balaji" data-toggle="modal"  data-target="#modalBalaji">
+                    </div>
+                    <h2>B.Balaji</h2>
+                    <p>Co-Founder</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalAshish" tabindex="-1" aria-labelledby="modalAshishLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAshishLabel">T.Ashish</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>T.Ashish is the co-founder of Mythical Minds. He has a deep interest in mythology and human values...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBhanuTej" tabindex="-1" aria-labelledby="modalBhanuTejLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBhanuTejLabel">P.Bhanu Tej</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>P.Bhanu Tej is the founder of Mythical Minds. With a passion for ethical values and mythology...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBalaji" tabindex="-1" aria-labelledby="modalBalajiLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBalajiLabel">B.Balaji</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Balaji Boyini lakshyama raj Dravid is the co-founder of Mythical Minds. He is dedicated to promoting human and ethical values...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Mythical Minds</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
