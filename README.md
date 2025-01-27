@@ -7,14 +7,14 @@ Animated Videos: High-quality animations bring stories to life.
 Moral Lessons: Every story highlights important values and lessons.
 Interactive UI: A user-friendly interface tailored for children.
 
-Tech Stack
-Frontend: HTML, CSS, JavaScript
-Backend: (In Progress)
-Database: (To Be Decided)
-Animations: Blender (In Progress)
-
-Contact:
-For any inquiries or feedback, please reach out to:
-Name: Bhanu Tej Pailla
-Email: paillabhanutej5@gmail.com
-LinkedIn: https://www.linkedin.com/in/pailla-bhanu-tej/
+Tech Stack:                                                                                                                                     
+Frontend: HTML, CSS, JavaScript                                           
+Backend: (In Progress)                                                       
+Database: (To Be Decided)                                                                                  
+Animations: Blender (In Progress)                                                                          
+                                               
+Contact:                                                                       
+For any inquiries or feedback, please reach out to:                                                                                          
+Name: Bhanu Tej Pailla                                                                                                                   
+Email: paillabhanutej5@gmail.com                                                                                          
+LinkedIn: https://www.linkedin.com/in/pailla-bhanu-tej/                                                                                   
